@@ -15,13 +15,13 @@
         "id": "okMsg",
         "type": "Symbol",
         "name": "Message on build start success",
-		"required": true
+        "required": true
       },
       {
         "id": "failedMsg",
         "type": "Symbol",
         "name": "Message on build start failed",
-		"required": true
+        "required": true
       }
     ]
   }
