@@ -8,7 +8,7 @@
       {
         "id": "bambooProxyBaseUrl",
         "type": "Symbol",
-        "name": "Bamboo Proxy Base URL"
+        "name": "Bamboo Proxy Base URL",
         "required": true
       },
       {
