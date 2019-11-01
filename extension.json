@@ -1,0 +1,28 @@
+{
+  "id": "bamboo-build",
+  "name": "Bamboo Build",
+  "srcdoc": "./index.html",
+  "sidebar": true,
+  "parameters": {
+    "instance": [
+      {
+        "id": "bambooProxyBaseUrl",
+        "type": "Symbol",
+        "name": "Bamboo Proxy Base URL"
+        "required": true
+      },
+      {
+        "id": "okMsg",
+        "type": "Symbol",
+        "name": "Message on build start success",
+		"required": true
+      },
+      {
+        "id": "failedMsg",
+        "type": "Symbol",
+        "name": "Message on build start failed",
+		"required": true
+      }
+    ]
+  }
+}

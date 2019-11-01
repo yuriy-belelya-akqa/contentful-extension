@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <script src='https://unpkg.com/contentful-ui-extensions-sdk@3'></script>
+    <link rel='stylesheet' href='https://unpkg.com/contentful-ui-extensions-sdk@3/dist/cf-extension.css'/>
+</head>
+
+<body style='margin: 0;'>
+<div id='root' style='display:none'>
+    <button id='triggerEndpoint' class='cf-btn-primary' style='width: 100%;'></button>
+</div>
+<script>
+
+    function showExtension(extension) {
+       //show extension logic
+    }
+
+    window.contentfulExtension.init(function (extension) {
+        extension.window.startAutoResizer();
+        showExtension(extension);
+    });
+
+</script>
+</body>
+</html>
