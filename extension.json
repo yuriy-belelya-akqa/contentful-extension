@@ -2,7 +2,7 @@
   "id": "bamboo-build",
   "name": "Bamboo Build",
   "srcdoc": "./index.html",
-  "sidebar": true,
+  "fieldTypes": ["Object"],
   "parameters": {
     "instance": [
       {
