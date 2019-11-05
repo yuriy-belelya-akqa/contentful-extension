@@ -2,13 +2,21 @@
   "id": "bamboo-build",
   "name": "Bamboo Build",
   "srcdoc": "./index.html",
-  "fieldTypes": ["Object"],
+  "fieldTypes": [
+    "Object"
+  ],
   "parameters": {
     "instance": [
       {
         "id": "bambooProxyBaseUrl",
         "type": "Symbol",
         "name": "Bamboo Proxy Base URL",
+        "required": true
+      },
+      {
+        "id": "projectKey",
+        "type": "Symbol",
+        "name": "Bamboo project key",
         "required": true
       },
       {
@@ -21,6 +29,12 @@
         "id": "failedMsg",
         "type": "Symbol",
         "name": "Message on build start failed",
+        "required": true
+      },
+      {
+        "id": "buildInProgressMsg",
+        "type": "Symbol",
+        "name": "Message on build in progress",
         "required": true
       }
     ]
