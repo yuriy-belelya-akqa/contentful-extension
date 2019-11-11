@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-​
+
 <head>
     <meta charset='utf-8'>
     <script src='https://unpkg.com/contentful-ui-extensions-sdk@3'></script>
     <link rel='stylesheet' href='https://unpkg.com/contentful-ui-extensions-sdk@3/dist/cf-extension.css'/>
 </head>
-​
+
 <body style='margin: 0;'>
 <div id='root' style='display:none'>
     <button id='deployBtn' class='cf-btn-primary' style='width: 100%;'></button>
@@ -15,25 +15,25 @@
         <div id="history" style="padding-left: 15px;"></div>
     </div>
 </div>
-​
+
 <script>
-​
+
     function showExtension(extension) {
-​
+
         document.getElementById('root').style.display = 'block';
-        document.getElementById('deployBtn').innerText = 'Deploy ' + extension.ids.environment;
+        document.getElementById('deployBtn').innerText = extension.parameters.instance.btnLabel;
         const baseUrl = extension.parameters.instance.bambooProxyBaseUrl;
         const projectKey = extension.parameters.instance.projectKey;
-​
+
         const okMsg = extension.parameters.instance.okMsg;
         const failedMsg = extension.parameters.instance.failedMsg;
         const buildInProgressMsg = extension.parameters.instance.buildInProgressMsg;
-​
+
         const BUILD_IN_PROGRESS_MARKER = 'you have reached the maximum number of concurrent builds allowed';
-​
+
         const deployBtn = document.getElementById('deployBtn');
         const history = document.getElementById('history');
-​
+
         deployBtn.addEventListener('click', async () => {
             await extension.dialogs.openConfirm({
                 title: 'Deploy changes?',
@@ -69,10 +69,10 @@
                     }
                 });
         });
-​
+
         loadBuildsHistory(baseUrl, projectKey, history);
     }
-​
+
     function loadBuildsHistory(baseUrl, projectKey, history) {
         const unableToLoadHistoryHtml = '<p style=\'color: red;\'>Unable to load deployments history</p>';
         fetch(baseUrl + '/history?projectKey=' + projectKey, {
@@ -111,12 +111,12 @@
                 history.innerHTML = unableToLoadHistoryHtml;
             });
     }
-​
+
     window.contentfulExtension.init(function (extension) {
         extension.window.startAutoResizer();
         showExtension(extension);
     });
-​
+
 </script>
 </body>
 </html>

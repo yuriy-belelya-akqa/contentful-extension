@@ -20,6 +20,12 @@
         "required": true
       },
       {
+        "id": "btnLabel",
+        "type": "Symbol",
+        "name": "Button label",
+        "required": true
+      },
+      {
         "id": "okMsg",
         "type": "Symbol",
         "name": "Message on build start success",
