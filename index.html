@@ -20,14 +20,18 @@
 
     function showExtension(extension) {
 
+        const locale = extension.field.locale;
+        const name = extension.entry.fields['name']._fieldLocales[locale]['_value'];
+        const projectKey = extension.entry.fields['projectKey']._fieldLocales[locale]['_value'];
+
         document.getElementById('root').style.display = 'block';
-        document.getElementById('deployBtn').innerText = extension.parameters.instance.btnLabel;
+        document.getElementById('deployBtn').innerText = name;
         const baseUrl = extension.parameters.instance.bambooProxyBaseUrl;
-        const projectKey = extension.parameters.instance.projectKey;
 
         const okMsg = extension.parameters.instance.okMsg;
         const failedMsg = extension.parameters.instance.failedMsg;
         const buildInProgressMsg = extension.parameters.instance.buildInProgressMsg;
+
 
         const BUILD_IN_PROGRESS_MARKER = 'you have reached the maximum number of concurrent builds allowed';
 
